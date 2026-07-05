@@ -43,7 +43,33 @@ def predict():
 
     for feature in numeric_features:
         data[feature] = float(request.form[feature])
+    if data["age"] < 1 or data["age"] > 105:
+        return render_template(
+            "index.html",
+            prediction="Age must be between 1 and 105 years.",
+            confidence=""
+        )
 
+    if data["flight distance"] < 0:
+        return render_template(
+            "index.html",
+            prediction="Flight distance cannot be negative.",
+            confidence=""
+        )
+
+    if data["departure delay"] < 0:
+        return render_template(
+            "index.html",
+            prediction="Departure delay cannot be negative.",
+            confidence=""
+        )
+
+    if data["arrival delay"] < 0:
+        return render_template(
+            "index.html",
+            prediction="Arrival delay cannot be negative.",
+            confidence=""
+        )
     # Gender
     data["gender_Male"] = 1 if request.form["gender"] == "Male" else 0
 

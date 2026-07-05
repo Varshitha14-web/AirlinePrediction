@@ -118,7 +118,7 @@
 
 <div class="card-body">
 
-<form action="/predict" method="POST">
+<form action="/predict" method="POST"onsubmit="loading()">
 
 <h5>👤Passenger Details</h5>
 
@@ -129,8 +129,13 @@
 <input class="form-control"
 type="number"
 name="age"
+min="1"
+max="105"
 placeholder="e.g. 35"
+onkeydown="return validateAge(event)"
+oninput="checkAge(this)"
 required>
+<small id="ageError" class="text-danger"></small>
 </div>
 
 <div class="col-md-6 mb-3">
@@ -138,26 +143,35 @@ required>
 <input class="form-control"
 type="number"
 name="flight distance"
+min="0"
+onkeydown="return validateFlight(event)"
 placeholder="e.g. 1200 km"
 required>
+<small id="flightError" class="text-danger"></small>
 </div>
 
 <div class="col-md-6 mb-3">
 <label>Departure Delay</label>
 <input class="form-control"
 type="number"
+min="0" 
 name="departure delay"
 placeholder="e.g. 10 minutes"
+onkeydown="return validateDeparture(event)"
 required>
+<small id="departureError" class="text-danger"></small>
 </div>
 
 <div class="col-md-6 mb-3">
 <label>Arrival Delay</label>
 <input class="form-control"
 type="number"
+min="0" 
 name="arrival delay"
 placeholder="e.g. 5 minutes"
+onkeydown="return validateArrival(event)"
 required>
+<small id="arrivalError" class="text-danger"></small>
 </div>
 
 </div>
@@ -400,7 +414,8 @@ required>
     <div class="col-md-6">
         <button
         class="btn btn-primary w-100"
-        type="submit">
+        type="submit"
+        id="predictBtn">
             🔍 Predict Satisfaction
         </button>
     </div>
@@ -440,6 +455,92 @@ required>
 </div>
 
 </div>
+<script>
+
+function validateAge(event){
+
+    const error = document.getElementById("ageError");
+
+    if(event.key=="-"){
+        error.innerHTML="❌ Negative values are not allowed.";
+        event.preventDefault();
+        return false;
+    }
+
+    if(event.key=="e" || event.key=="E"){
+        error.innerHTML="❌ Please enter a valid age.";
+        event.preventDefault();
+        return false;
+    }
+
+    error.innerHTML="";
+    return true;
+}
+
+function checkAge(input){
+
+    const error = document.getElementById("ageError");
+
+    if(input.value > 105){
+        error.innerHTML="❌ Age must be between 1 and 105 years.";
+        input.value="";
+    }else{
+        error.innerHTML="";
+    }
+
+}
+function validateFlight(event){
+
+    const error = document.getElementById("flightError");
+
+    if(event.key=="-" || event.key=="e" || event.key=="E"){
+        error.innerHTML="❌ Negative values are not allowed.";
+        event.preventDefault();
+        return false;
+    }
+
+    error.innerHTML="";
+    return true;
+}
+
+function validateDeparture(event){
+
+    const error = document.getElementById("departureError");
+
+    if(event.key=="-" || event.key=="e" || event.key=="E"){
+        error.innerHTML="❌ Negative values are not allowed.";
+        event.preventDefault();
+        return false;
+    }
+
+    error.innerHTML="";
+    return true;
+}
+
+function validateArrival(event){
+
+    const error = document.getElementById("arrivalError");
+
+    if(event.key=="-" || event.key=="e" || event.key=="E"){
+        error.innerHTML="❌ Negative values are not allowed.";
+        event.preventDefault();
+        return false;
+    }
+
+    error.innerHTML="";
+    return true;
+}
+function loading(){
+
+    const btn = document.getElementById("predictBtn");
+
+    btn.disabled = true;
+    btn.innerHTML =  '<span class="spinner-border spinner-border-sm"></span> Predicting...';
+
+}
+
+</script>
+
 
 </body>
 </html>
