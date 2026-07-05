@@ -107,12 +107,10 @@
 </h1>
 
 <p class="lead mb-0">
-    Predict Passenger Satisfaction using Machine Learning
+    Random Forest Classifier using Machine Learning
 </p>
 
-<small>
-    Random Forest Classifier | AI & Machine Learning Project
-</small>
+
 
 </div>
 
@@ -372,41 +370,44 @@ required>
 
 <div class="row">
 
-<div class="col-md-3 mb-3">
-<label>Gender</label>
-<select class="form-select" name="gender">
-<option>Male</option>
-<option>Female</option>
-</select>
-</div>
+    <div class="col-md-3 mb-3">
+        <label>Gender</label>
+        <select class="form-select" name="gender" required>
+            <option value="" selected disabled>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </div>
 
-<div class="col-md-3 mb-3">
-<label>Customer Type</label>
-<select class="form-select" name="customer_type">
-<option>Returning</option>
-<option>First-time</option>
-</select>
-</div>
+    <div class="col-md-3 mb-3">
+        <label>Customer Type</label>
+        <select class="form-select" name="customer_type" required>
+            <option value="" selected disabled>Select Customer Type</option>
+            <option value="Returning">Returning</option>
+            <option value="First-time">First-time</option>
+        </select>
+    </div>
 
-<div class="col-md-3 mb-3">
-<label>Travel Type</label>
-<select class="form-select" name="travel_type">
-<option>Business</option>
-<option>Personal</option>
-</select>
-</div>
+    <div class="col-md-3 mb-3">
+        <label>Travel Type</label>
+        <select class="form-select" name="travel_type" required>
+            <option value="" selected disabled>Select Travel Type</option>
+            <option value="Business">Business</option>
+            <option value="Personal">Personal</option>
+        </select>
+    </div>
 
-<div class="col-md-3 mb-3">
-<label>Travel Class</label>
-<select class="form-select" name="travel_class">
-<option>Business</option>
-<option>Economy</option>
-<option>Economy Plus</option>
-</select>
-</div>
+    <div class="col-md-3 mb-3">
+        <label>Travel Class</label>
+        <select class="form-select" name="travel_class" required>
+            <option value="" selected disabled>Select Travel Class</option>
+            <option value="Business">Business</option>
+            <option value="Economy">Economy</option>
+            <option value="Economy Plus">Economy Plus</option>
+        </select>
+    </div>
 
 </div>
-
 <br>
 
 <div class="row">
