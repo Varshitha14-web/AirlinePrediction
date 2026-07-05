@@ -1,0 +1,119 @@
+/* Google Font */
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#0f172a);
+    min-height:100vh;
+    padding:30px;
+}
+
+/* Main Card */
+.card{
+    background:#101827;
+    border:none;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.45);
+}
+
+/* Header */
+.header{
+    background:linear-gradient(90deg,#2563eb,#06b6d4);
+    color:white;
+    padding:40px;
+    text-align:center;
+}
+
+.header h1{
+    font-size:40px;
+    font-weight:700;
+}
+
+.header p{
+    font-size:20px;
+}
+
+/* Inputs */
+.form-control,
+.form-select{
+    background:#1e293b;
+    color:#ffffff;
+    border:1px solid #334155;
+    border-radius:10px;
+
+    height:42px;          /* Reduced from 58px */
+    padding:6px 10px;     /* Reduced from 15px */
+    font-size:14px;       /* Reduced from 17px */
+}
+
+.form-control:focus,
+.form-select:focus{
+    background:#1e293b;
+    color:#ffffff;
+    border-color:#06b6d4;
+    box-shadow:0 0 8px rgba(6,182,212,.25);
+}
+.form-control::placeholder{
+    color:#94a3b8;
+}
+
+.form-select option{
+    background:#1e293b;
+    color:white;
+}
+
+/* Section headings */
+h5{
+    color:#2563eb;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+/* Buttons */
+.btn-primary{
+    background:linear-gradient(90deg,#2563eb,#06b6d4);
+    border:none;
+    height:55px;
+    font-size:18px;
+    font-weight:600;
+    border-radius:12px;
+}
+
+.btn-primary:hover{
+    transform:scale(1.02);
+    transition:.3s;
+}
+label{
+    color:#e2e8f0;
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:8px;
+    display:block;
+}
+.hero img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:20px 20px 0 0;
+}
+.section-card{
+    background:#1b263b;
+    border:1px solid rgba(0,212,255,.15);
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+.row{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.col-lg-6{
+    width:50%;
+}
+
+@media (max-width:768px){
+    .col-lg-6{
+        width:100%;
+    }
+}
